@@ -1,12 +1,17 @@
 import "./App.css";
+import TodoApp from "./components/TodoApp";
 
 function App() {
   return (
     <div className="App">
       <h1>TodoList App</h1>
-      <div className="container"></div>
+      <TodoApp />
     </div>
   );
 }
 
 export default App;
+
+// TodoApp: todos
+// TodoForm => input + button => add todo
+// TodoList => todos.map(...) =>
