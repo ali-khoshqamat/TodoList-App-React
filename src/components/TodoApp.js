@@ -6,7 +6,6 @@ const TodoApp = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (input) => {
-    console.log(input);
     const newTodo = {
       id: Math.floor(Math.random() * 1000),
       text: input,
@@ -14,11 +13,23 @@ const TodoApp = () => {
     };
     setTodos([...todos, newTodo]);
   };
+  const completeTodoHander = (id) => {
+    // find index
+    const index = todos.findIndex((todo) => todo.id === id);
+    // clone: Do Not MUTATE
+    const selectedTodo = { ...todos[index] };
+    selectedTodo.isCompleted = !selectedTodo.isCompleted;
+    // clone todos
+    const updatedTodos = [...todos];
+    updatedTodos[index] = selectedTodo;
+    // setState
+    setTodos(updatedTodos);
+  };
 
   return (
     <div className="container">
       <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onComplete={completeTodoHander} />
     </div>
   );
 };
