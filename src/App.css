@@ -20,3 +20,10 @@
   border-radius: 5px;
   padding: 10px;
 }
+.todo {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
