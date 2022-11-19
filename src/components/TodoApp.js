@@ -13,7 +13,7 @@ const TodoApp = () => {
     };
     setTodos([...todos, newTodo]);
   };
-  const completeTodoHander = (id) => {
+  const completeTodoHandler = (id) => {
     // find index
     const index = todos.findIndex((todo) => todo.id === id);
     // clone: Do Not MUTATE
@@ -25,11 +25,19 @@ const TodoApp = () => {
     // setState
     setTodos(updatedTodos);
   };
+  const deleteTodoHandler = (id) => {
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
+  };
 
   return (
     <div className="container">
       <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList todos={todos} onComplete={completeTodoHander} />
+      <TodoList
+        todos={todos}
+        onComplete={completeTodoHandler}
+        onDelete={deleteTodoHandler}
+      />
     </div>
   );
 };
