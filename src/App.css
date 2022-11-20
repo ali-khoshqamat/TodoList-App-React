@@ -82,6 +82,7 @@ header {
   border-radius: 5px;
   margin-bottom: 15px;
 }
+
 header h2 {
   font-size: 14px;
   color: #7e22ce;
@@ -98,4 +99,8 @@ header span {
   margin-left: 3px;
   margin-bottom: 8px;
   font-size: 12px;
+}
+.select {
+  width: 180px;
+  margin-left: 20px;
 }
